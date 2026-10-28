@@ -16,3 +16,8 @@ actually this is far easier with just a little bit of paper:
 
 work on a proper function when you got time
 """
+
+import math
+
+# the smallest number divisible by every number from 1 to 20 is their least common multiple
+print(math.lcm(*range(1, 21)))

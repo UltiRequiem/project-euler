@@ -99,8 +99,9 @@ DATA = """37107287533902102798797998220837590246510135740250
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690"""
 
-numbers = [int(item[:10]) for item in DATA.split("\n") ]
+# Add the whole numbers first, then take the first ten digits.
+# (Cutting each number to ten digits before adding loses the carry from the digits that were dropped,
+# which makes the last digit wrong.)
+numbers = [int(item) for item in DATA.split()]
 
-result = sum(numbers)
-
-print(result)
+print(str(sum(numbers))[:10])
